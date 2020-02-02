@@ -22,8 +22,8 @@ RUN apk --update add tzdata \
 RUN cp /usr/share/zoneinfo/$TZ /etc/localtime
 RUN echo $TZ >  /etc/timezone
 
-RUN yarn global add mkdirp@0.5.1
-RUN yarn global add lerna@3.16.5
+# Deep subdependency is making lerna incompatible with node 9.5
+# RUN yarn global add lerna@3.16.5
 RUN yarn global add serverless
 RUN yarn config set workspaces-experimental true
 RUN curl -L https://github.com/AGWA/git-crypt/archive/debian/$GITCRYPT_VERSION.tar.gz | tar zxv -C /var/tmp
