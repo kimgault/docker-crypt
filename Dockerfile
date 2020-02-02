@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:9.5-alpine
 MAINTAINER kimgault <kimmygault@gmail.com>
 
 ENV GITCRYPT_VERSION 0.5.0-2
@@ -22,8 +22,8 @@ RUN apk --update add tzdata \
 RUN cp /usr/share/zoneinfo/$TZ /etc/localtime
 RUN echo $TZ >  /etc/timezone
 
-RUN yarn global add lerna@3.16.5
-RUN yarn global add serverless@1.59.0
+RUN yarn global add lerna@2.5.1
+RUN yarn global add serverless@1.19.0
 RUN yarn config set workspaces-experimental true
 RUN curl -L https://github.com/AGWA/git-crypt/archive/debian/$GITCRYPT_VERSION.tar.gz | tar zxv -C /var/tmp
 RUN cd /var/tmp/git-crypt-debian-$GITCRYPT_VERSION && make && make install PREFIX=/usr/local
