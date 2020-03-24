@@ -1,7 +1,7 @@
 FROM node:10.19.0-alpine
 MAINTAINER kimgault <kimmygault@gmail.com>
 
-ENV GITCRYPT_VERSION 0.5.0-2
+ENV GITCRYPT_VERSION 0.6.0
 ENV TZ America/Los_Angeles
 
 # openssh needed for CircleCI
