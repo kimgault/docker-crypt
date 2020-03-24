@@ -1,4 +1,4 @@
-FROM node:9.5-alpine
+FROM node:10.19.0-alpine
 MAINTAINER kimgault <kimmygault@gmail.com>
 
 ENV GITCRYPT_VERSION 0.5.0-2
