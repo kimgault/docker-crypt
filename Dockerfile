@@ -26,6 +26,6 @@ RUN yarn global add lerna@3.16.4 --ignore-engines
 RUN yarn global add serverless@1.19.0 --ignore-engines
 RUN yarn config set workspaces-experimental true
 RUN curl -L https://github.com/AGWA/git-crypt/archive/$GITCRYPT_VERSION.tar.gz | tar zxv -C /var/tmp
-RUN cd /var/tmp/git-crypt-debian-$GITCRYPT_VERSION && make && make install PREFIX=/usr/local
+RUN cd /var/tmp/git-crypt-$GITCRYPT_VERSION && make && make install PREFIX=/usr/local
 
 CMD ["/bin/sh"]
